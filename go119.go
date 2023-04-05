@@ -3,7 +3,11 @@
 
 package version_test
 
-type i struct{}
+import "github.com/DataDog/zstd"
+
+type i struct {
+	zstd.Writer
+}
 
 func (i) PrintVersion() string {
 	return "not 1.20"

@@ -3,7 +3,11 @@
 
 package version_test
 
-type i struct{}
+import "github.com/klauspost/compress/zstd"
+
+type i struct {
+	zstd.Decoder
+}
 
 func (i) PrintVersion() string {
 	return "1.20"
